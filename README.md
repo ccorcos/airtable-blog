@@ -49,8 +49,7 @@ npm run dev
 Or you can throw it up on the interwebs with [Now.sh](https://now.sh/)
 
 ```sh
-npm install -g now
-now
+npm run deploy
 ```
 
 # To Do

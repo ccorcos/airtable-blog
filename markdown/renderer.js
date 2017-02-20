@@ -1,4 +1,4 @@
-import { AstRenderer, MarkdownParser } from 'markdown-it-renderer'
+import { AstRenderer } from 'markdown-it-renderer'
 
 import { H1, H2, H3, H4, H5, P, Blockquote, Span, Code, A, Hr, Br } from '../ui/typography'
 import Table from '../ui/table'

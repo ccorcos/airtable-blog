@@ -2,11 +2,11 @@
   "name": "airtable-blog",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "source env.sh && node server/index.js",
     "build": "next build",
-    "start": "source env.sh && NODE_ENV=production node server/index.js"
+    "start": "source env.sh && NODE_ENV=production node server/index.js",
+    "deploy": "now"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +17,11 @@
     "glamor": "^2.20.23",
     "morgan": "^1.8.1",
     "next": "^2.0.0-beta.31",
-    "markdown-it-renderer": "^0.0.2",
+    "markdown-it-renderer": "^0.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "now": "^4.5.6"
   }
 }
