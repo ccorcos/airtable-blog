@@ -7,6 +7,7 @@ import { A, H2, Span } from '../ui/typography'
 import List from '../ui/list'
 import Button from '../ui/button'
 import Link from '../ui/link'
+import Map from '../ui/map'
 
 export default class extends React.PureComponent {
   static async getInitialProps({ req }) {
@@ -49,7 +50,6 @@ export default class extends React.PureComponent {
               Editor
             </Button>
           </Nav.Aside>
-
         </Nav>
         <Article>
           {this.renderList()}

@@ -15,9 +15,10 @@
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
     "glamor": "^2.20.23",
+    "markdown-it-renderer": "^0.1.0",
     "morgan": "^1.8.1",
     "next": "^2.0.0-beta.31",
-    "markdown-it-renderer": "^0.1.0",
+    "query-string": "^4.3.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
