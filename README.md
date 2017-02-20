@@ -8,23 +8,55 @@ Furthermore, `markdown-it-renderer` is built in such a way that you should be ab
 
 ## Getting Setup
 
+Sign up with [Airtable](https://airtable.com), create a new "base" with a table named "Posts". Add two fields -- "Markdown" should be a *Long text* field, and "Date Published" should be a *Date* field. Create a demo post, and it should look like this:
 
+![](./img/airtable-setup.png)
 
-- create a base with a table called "Posts"
-  - create "Markdown" Long Text field
-  - create a "Date Published" date field
-- generate an api key here: https://airtable.com/account
-- go here and get the base name: - https://airtable.com/appuNKawr4rf3Mnav/api/docs
-- create a file called env.sh with this information
-    ```sh
-    export AIRTABLE_API_KEY='XXX'
-    export AIRTABLE_BASE_NAME='XXX'
-    export PASSWORD='XXX'
-    ```
+Now clone this repo, and create a file called `env.sh`:
 
-# TODO
+```sh
+git clone git@github.com:ccorcos/airtable-blog.git
+cd airtable-blog
+touch env.sh
+```
 
-- client side navigation
+Inside `env.sh` you need to export three variables:
+
+```sh
+export AIRTABLE_API_KEY='XXX'
+export AIRTABLE_BASE_NAME='XXX'
+export PASSWORD='XXX'
+```
+
+You can create an Airtable api key [here](https://airtable.com/account).
+
+You can get the base name by going [here](https://airtable.com/api) clicking on the base you just created, and then looking at the very first example -- there should be a cURL request that looks like this:
+
+```sh
+curl https://api.airtable.com/v0/$AIRTABLE_BASE_NAME/Posts \
+-H "Authorization: Bearer YOUR_API_KEY"
+```
+
+Lastly, set up a password you are going to use to authenticate requests for creating posts.
+
+You can run it locally:
+
+```js
+npm install
+npm run dev
+```
+
+Or you can throw it up on the interwebs with [Now.sh](https://now.sh/)
+
+```sh
+npm install -g now
+now
+```
+
+# To Do
+
 - deploy with now
-- better readme
+- client side navigation with Next.js router isn't working
+  - https://github.com/zeit/next.js/issues/1222
 - markdown widgets
+  - Google Maps widget
