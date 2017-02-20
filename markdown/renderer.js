@@ -15,7 +15,6 @@ class PassThrough extends React.Component {
 export default new AstRenderer({
   root: children => <Box children={children}/>,
   text: value => value,
-  a: (props, children) => <A {...props} children={children}/>,
   h1: (props, children) => <H1 {...props} children={children}/>,
   h2: (props, children) => <H2 {...props} children={children}/>,
   h3: (props, children) => <H3 {...props} children={children}/>,

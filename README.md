@@ -12,12 +12,13 @@ Sign up with [Airtable](https://airtable.com), create a new "base" with a table 
 
 ![](./img/airtable-setup.png)
 
-Now clone this repo, and create a file called `env.sh`:
+Now clone this repo, create a file called `env.sh`, and install the NPM dependencies:
 
 ```sh
 git clone git@github.com:ccorcos/airtable-blog.git
 cd airtable-blog
 touch env.sh
+npm install
 ```
 
 Inside `env.sh` you need to export three variables:
@@ -42,7 +43,6 @@ Lastly, set up a password you are going to use to authenticate requests for crea
 You can run it locally:
 
 ```js
-npm install
 npm run dev
 ```
 
@@ -54,8 +54,5 @@ npm run deploy
 
 # To Do
 
-- deploy with now
-- client side navigation with Next.js router isn't working
-  - https://github.com/zeit/next.js/issues/1222
 - markdown widgets
   - Google Maps widget

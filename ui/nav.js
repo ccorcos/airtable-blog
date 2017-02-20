@@ -1,6 +1,7 @@
 import { css } from 'glamor'
 import { theme, white } from './color'
 import { navHeight } from './defs'
+import Link from './link'
 
 const navStyle = css({
   position: 'fixed',
@@ -23,7 +24,8 @@ const titleStyle = css({
   textDecoration: 'none',
 })
 
-Nav.Title = props => <a href='/' className={titleStyle} {...props}>{props.children}</a>
+Nav.Title = props =>
+  <Link route='/' className={titleStyle} {...props}>{props.children}</Link>
 
 const asideStyle = css({
   position: 'absolute',

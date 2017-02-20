@@ -9,11 +9,14 @@ module.exports = class Airtable {
     this.apiKey = apiKey
     this.baseName = baseName
     this.baseUrl = `${apiUrl}/${this.baseName}/`
-    this.cache = new Cache(1000 * 60 * 5)
     this.list = this.cached(this._list.bind(this))
     this.get = this.cached(this._get.bind(this))
-    this.create = this.cached(this._create.bind(this))
-    this.update = this.cached(this._update.bind(this))
+    this.create = this._create.bind(this)
+    this.update = this._update.bind(this)
+    this.bust()
+  }
+  bust() {
+    this.cache = new Cache(1000 * 60 * 5)
   }
   cached(fn) {
     return (...args) => {
@@ -51,6 +54,7 @@ module.exports = class Airtable {
     return this.fetch(`${table}/${id}`)
   }
   _create(table, fields) {
+    this.bust()
     return this.fetch(table, {
       method: 'POST',
       headers: {
@@ -60,6 +64,7 @@ module.exports = class Airtable {
     })
   }
   _update(table, id, fields) {
+    this.bust()
     return this.fetch(table, {
       method: 'PATCH',
       headers: {

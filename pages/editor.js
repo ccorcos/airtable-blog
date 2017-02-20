@@ -81,7 +81,7 @@ export default class extends React.PureComponent {
       })
     })
     const { id } = await response.json()
-    window.location = `/posts/${id}`
+    Router.push(`/post?id=${id}`, `/posts/${id}`)
   }
   _onChangeTextArea(event) {
     const markdown = event.target.value

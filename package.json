@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "source env.sh && node server/index.js",
     "build": "next build",
-    "start": "source env.sh && NODE_ENV=production node server/index.js",
-    "deploy": "now"
+    "start": "NODE_ENV=production node server/index.js",
+    "deploy": "source env.sh && now -e AIRTABLE_API_KEY -e AIRTABLE_BASE_NAME -e PASSWORD"
   },
   "keywords": [],
   "author": "",

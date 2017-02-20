@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import Layout from '../ui/layout'
 import Nav from '../ui/nav'
 import Article from '../ui/article'
@@ -5,6 +6,7 @@ import Box from '../ui/box'
 import { A, H2, Span } from '../ui/typography'
 import List from '../ui/list'
 import Button from '../ui/button'
+import Link from '../ui/link'
 
 export default class extends React.PureComponent {
   static async getInitialProps({ req }) {
@@ -25,9 +27,9 @@ export default class extends React.PureComponent {
       <List>
         {this.props.data.records.map(record =>
           <List.Item key={record.id}>
-            <A href={`/posts/${record.id}`} key={record.id}>
+            <Link route={`/post?id=${record.id}`} path={`/posts/${record.id}`} key={record.id}>
               <Span bold>{record.fields.Name}</Span>
-            </A>
+            </Link>
             <Span>{' published on '  + record.fields["Date Published"]}</Span>
           </List.Item>
         )}
@@ -35,7 +37,7 @@ export default class extends React.PureComponent {
     )
   }
   _onClick() {
-    window.location = '/editor'
+    Router.push('/editor')
   }
   render() {
     return (
