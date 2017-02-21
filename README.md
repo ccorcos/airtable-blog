@@ -1,10 +1,10 @@
-# Airtable Blog
+# Airtable Blog ([demo](https://airtable-blog-bekxrzdiak.now.sh))
 
 This project demonstrates using [Next.js](https://github.com/zeit/next.js) to server-side render markdown in React using the [`markdown-it-renderer`](https://github.com/ccorcos/markdown-it-renderer), and hosting all of the blog posts on [Airtable](airtable.com).
 
-Admittedly, there are some hacks going on here, but the point is to create a proof of concept for a simple microservice with a low amount of developer maintainence.
+Admittedly, there are some hacks going on here, but the point is to create a proof of concept for a simple micro-service with a low amount of developer maintenance.
 
-Furthermore, `markdown-it-renderer` is built in such a way that you should be able to create you're own custom components and render them in markdown. More on that soon...
+Furthermore, `markdown-it-renderer` is built in such a way that you should be able to create you're own custom components and render them in markdown.
 
 ## Getting Setup
 
