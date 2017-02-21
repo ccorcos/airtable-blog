@@ -51,8 +51,3 @@ Or you can throw it up on the interwebs with [Now.sh](https://now.sh/)
 ```sh
 npm run deploy
 ```
-
-# To Do
-
-- markdown widgets
-  - Google Maps widget
